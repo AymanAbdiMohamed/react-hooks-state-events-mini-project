@@ -2,14 +2,14 @@ import React, { useState } from "react";
 
 function NewTaskForm({ categories, onTaskFormSubmit }) {
   const [text, setText] = useState("");
-  const [category, setCategory] = useState(categories[1] || ""); // skip "All"
+  const [category, setCategory] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!text) return;
+    if (!text || !category) return;
     onTaskFormSubmit({ text, category });
     setText("");
-    setCategory(categories[1] || "");
+    setCategory("");
   };
 
   return (
@@ -28,6 +28,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
         onChange={(e) => setCategory(e.target.value)}
         required
       >
+        <option value="">Select category</option>
         {categories
           .filter((cat) => cat !== "All")
           .map((cat) => (

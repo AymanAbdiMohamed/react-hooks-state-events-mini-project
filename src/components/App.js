@@ -8,17 +8,13 @@ function App() {
   const [tasks, setTasks] = useState(TASKS);
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const handleDeleteTask = (taskToDelete) => {
+  const handleDeleteTask = (taskToDelete) =>
     setTasks(tasks.filter((task) => task.text !== taskToDelete.text));
-  };
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-  };
+  const handleCategorySelect = (category) => setSelectedCategory(category);
 
-  const handleTaskFormSubmit = (newTask) => {
+  const handleTaskFormSubmit = (newTask) =>
     setTasks([...tasks, newTask]);
-  };
 
   const tasksToDisplay =
     selectedCategory === "All"
