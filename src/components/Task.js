@@ -1,7 +1,7 @@
 import React from "react";
 
 function Task({ task, onDeleteTask }) {
-  if (!task) return null; // safety check
+  if (!task) return null; // safety
   return (
     <li>
       <span>{task.text}</span> - <span>{task.category}</span>

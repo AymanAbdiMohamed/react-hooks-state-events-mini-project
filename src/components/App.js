@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import TaskList from "./components/TaskList";
-import CategoryFilter from "./components/CategoryFilter";
-import NewTaskForm from "./components/NewTaskForm";
-import { TASKS, CATEGORIES } from "./data";
+import TaskList from "./TaskList";
+import CategoryFilter from "./CategoryFilter";
+import NewTaskForm from "./NewTaskForm";
+import { TASKS, CATEGORIES } from "../data";
 
 function App() {
   const [tasks, setTasks] = useState(TASKS);
