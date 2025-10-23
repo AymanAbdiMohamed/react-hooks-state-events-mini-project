@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      <h1>Task List</h1>
+      <h1>My Tasks</h1>
       <CategoryFilter
         categories={CATEGORIES}
         selectedCategory={selectedCategory}
