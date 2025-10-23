@@ -6,6 +6,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!text) return;
     onTaskFormSubmit({ text, category });
     setText("");
     setCategory(categories[1] || "");
@@ -15,12 +16,14 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
     <form onSubmit={handleSubmit}>
       <input
         type="text"
+        name="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="New task"
         required
       />
       <select
+        name="category"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         required

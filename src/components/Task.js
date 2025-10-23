@@ -1,10 +1,11 @@
 import React from "react";
 
 function Task({ task, onDeleteTask }) {
+  if (!task) return null; // safety check
   return (
     <li>
-      {task.text} - <em>{task.category}</em>
-      <button onClick={() => onDeleteTask(task.text)}>Delete</button>
+      <span>{task.text}</span> - <span>{task.category}</span>
+      <button onClick={() => onDeleteTask(task)}>Delete</button>
     </li>
   );
 }
